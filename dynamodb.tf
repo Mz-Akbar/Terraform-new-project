@@ -4,7 +4,7 @@ resource "aws_dynamodb_table" "basic-dynamodb"{
     read_capacity = 20
     write_capacity = 20
     hash_key = "Album"
-    rang_key = "SongTitle"
+    range_key = "SongTitle"
 
     attribute {
         name = "Album"
@@ -14,11 +14,6 @@ resource "aws_dynamodb_table" "basic-dynamodb"{
     attribute {
         name = "SongTitle"
         type ="S"
-    }
-
-    attribute {
-        name = "Date"
-        type = "N"
     }
 
     tags = {

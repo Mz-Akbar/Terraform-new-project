@@ -11,11 +11,11 @@ data "archive_file" "archive" {
 
 
 resource "aws_lambda_function" "function" {
-  filename         = data.archive_file.example.output_path
-  function_name    = "example_lambda_function"
-  role             = aws_iam_role.example.arn
+  filename         = data.archive_file.archive.output_path
+  function_name    = "hellow_lambda_function"
+  role             = aws_iam_role.role.arn
   handler          = "index.handler"
-  source_code_hash = data.archive_file.example.output_base64sha256
+  source_code_hash = data.archive_file.archive.output_base64sha256
 
   runtime = "nodejs20.x"
 
